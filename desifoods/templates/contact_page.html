@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<style>
+.form_container {
+    margin-left: 100px; /* Move the form container towards the right */
+    max-width: 2000px;
+  }
+
+  .contact_box {
+    text-align: center;
+    padding-left: 210px;
+  }
+</style>
+
+<section class="contact_section layout_padding">
+  <div class="container">
+    <h2>
+      Get In touch
+    </h2>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="form_container">
+          <form method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Phone number" name="phone">
+            <input type="email" placeholder="Email" name="email">
+            <input type="text" placeholder="Message" class="message_input" name="message">
+            <button type="submit">
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="contact_box">
+          <a href="https://maps.app.goo.gl/dh8QRtbfHTXbkjdg9">
+            <div class="img-box" >
+              <img src="{% static 'images/location.png' %}" alt="">
+            </div>
+            <h6>
+              DHA phase 2 karachi
+            </h6>
+          </a>
+          <a href="tel:+923063104874">
+            <div class="img-box">
+              <img src="{% static 'images/call.png' %}" alt="Call Icon">
+            </div>
+            <h6>
+              (+92) 3063104874
+            </h6>
+          </a>
+          <a href="">
+            <div class="img-box">
+              <img src="{% static 'images/envelope.png' %}" alt="">
+            </div>
+            <h6>
+              gulab@gmail.com
+            </h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}

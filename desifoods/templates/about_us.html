@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<style>
+  .heading_container {
+    margin-left: 90px; /* Adjust the value as needed */
+  }
+
+  .paragraph_container {
+    margin-left: 90px; /* Adjust the value as needed */
+  }
+</style>
+<section class="about_section layout_margin">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5 offset-md-1">
+      <div class="detail-box">
+        <div class="heading_container">
+          <h2>
+            About <br>
+            Our <br>
+            Food
+          </h2>
+          <hr>
+        </div>
+        <p class="paragraph_container">
+          Our foods are a delightful blend of flavors and traditions, crafted with fresh, high-quality ingredients to offer a memorable dining experience.
+          Each dish is prepared with care,
+          reflecting our commitment to taste and authenticity.
+        </p >
+        <a href="" class="paragraph_container">
+          Read More
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 px-0">
+      <div class="img-box">
+        <img src="{% static 'images/about-img.jpg' %}" alt="" style="width: 100%; height: auto;">
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
