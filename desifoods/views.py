@@ -102,7 +102,7 @@ def checkout(request):
             )
             CustomerOrder_instance.save()
         request.session['cart'] = {}
-        return JsonResponse({"message": "Order Done", "redirect_url": ""})
+        return redirect('food')
     cart = request.session.get('cart', {})
     cart_total_amount = sum(float(item['price']) * int(item['quantity']) for item in cart.values())
     context = {

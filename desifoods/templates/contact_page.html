@@ -1,19 +1,7 @@
 {% extends 'base.html' %}
-{% block body %}
+{% block title %}contact_us |desi_foods{% endblock %}
 {% load static %}
-
-<style>
-.form_container {
-    margin-left: 100px; /* Move the form container towards the right */
-    max-width: 2000px;
-  }
-
-  .contact_box {
-    text-align: center;
-    padding-left: 210px;
-  }
-</style>
-
+{% block body %}
 <section class="contact_section layout_padding">
   <div class="container">
     <h2>
@@ -21,7 +9,7 @@
     </h2>
     <div class="row">
       <div class="col-md-7">
-        <div class="form_container">
+        <div class="form_container" style="margin-left: 100px; max-width: 2000px;">
           <form method="post">
             {% csrf_token %}
             <input type="text" placeholder="Name" name="name">
@@ -35,7 +23,7 @@
         </div>
       </div>
       <div class="col-md-5">
-        <div class="contact_box">
+        <div class="contact_box" style="text-align: center;padding-left: 210px;">
           <a href="https://maps.app.goo.gl/dh8QRtbfHTXbkjdg9">
             <div class="img-box" >
               <img src="{% static 'images/location.png' %}" alt="">

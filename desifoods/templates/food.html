@@ -1,97 +1,96 @@
 {% extends 'base.html' %}
-{% block body %}
+{% block title %}food |desi_foods{% endblock %}
 {% load static %}
-  <section class="dish_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="dish_container">
-            <div class="box">
-              <img src="{% static 'images/dish.jpg' %}" alt="">
-            </div>
-            <div class="box">
-              <img src="{% static 'images/dish1.jpg' %}" alt="">
-            </div>
-            <div class="box">
-              <img src="{% static 'images/dish2.jpg' %}" alt="">
-            </div>
-            <div class="box">
-              <img src="{% static 'images/dish3.jpg' %}" alt="">
-            </div>
+{% block body %}
+<section class="dish_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="dish_container">
+          <div class="box">
+            <img src="{% static 'images/dish.jpg' %}" alt="">
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <hr>
-              <h2>
-                Our <br>
-                Food <br>
-                dishes
-              </h2>
-            </div>
-            <p>
-              Discover the rich flavors of our traditional Desi dishes.
-              From spicy curries to savory snacks,
-              each dish is crafted with authentic ingredients to bring you the true taste of our heritage.
-              Dive into a culinary journey with our delicious offerings!
-            </p>
-            <a href="">
-              Read More
-            </a>
+          <div class="box">
+            <img src="{% static 'images/dish1.jpg' %}" alt="">
+          </div>
+          <div class="box">
+            <img src="{% static 'images/dish2.jpg' %}" alt="">
+          </div>
+          <div class="box">
+            <img src="{% static 'images/dish3.jpg' %}" alt="">
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <hr>
+            <h2>
+              Our <br>
+              Food <br>
+              dishes
+            </h2>
+          </div>
+          <p>
+            Discover the rich flavors of our traditional Desi dishes.
+            From spicy curries to savory snacks,
+            each dish is crafted with authentic ingredients to bring you the true taste of our heritage.
+            Dive into a culinary journey with our delicious offerings!
+          </p>
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- end dish section -->
+  </div>
+</section>
 
   <!-- hot section -->
 
-  <section class="hot_section layout_padding">
+<section class="hot_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        What's Hot
+      </h2>
+      <hr>
+  </div>
+    <p>
+      There are many variations of passages of Lorem Ipsum available, but the majority
+    </p>
+  </div>
+  <div class="carousel_container">
     <div class="container">
-      <div class="heading_container">
-        <h2>
-          What's Hot
-        </h2>
-        <hr>
-      </div>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, but the majority
-      </p>
-    </div>
-    <div class="carousel_container">
-      <div class="container">
-        <div class="carousel-wrap ">
-          <div class="owl-carousel">
-            {% for prod in product %}
-            <div style="flex: 1 1 calc(33.33% - 20px); box-sizing: border-box; margin-bottom: 20px;">
-              <div style="border: 1px solid #ddd; padding: 10px; text-align: center;">
-                <div style="width: 100%; height: 200px; overflow: hidden;">
-                  <img src="{{ prod.image }}" alt="{{ prod.name }}" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="detail-box" style="margin-top: 10px;">
-                  <h4>
-                    {{ prod.price }}
-                  </h4>
-                  <p>
-                    {{ prod.description }}
-                  </p>
-                   <a href="{% url 'product_detail' prod.id %}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; margin-top: 10px;">
-                    Order Now
-                  </a>
-                  <br>
-                  <a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>
-                    Add to cart
-                  </a>
-                </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel">
+          {% for prod in product %}
+          <div style="flex: 1 1 calc(33.33% - 20px); box-sizing: border-box; margin-bottom: 20px;">
+            <div style="border: 1px solid #ddd; padding: 10px; text-align: center;">
+              <div style="width: 100%; height: 200px; overflow: hidden;">
+                <img src="{{ prod.image }}" alt="{{ prod.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="detail-box" style="margin-top: 10px;">
+                <h4>
+                  {{ prod.price }}
+                </h4>
+                <p>
+                  {{ prod.description }}
+                </p>
+                 <a href="{% url 'product_detail' prod.id %}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; margin-top: 10px;">
+                  Order Now
+                </a>
+                <br>
+                <a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>
+                  Add to cart
+                </a>
               </div>
             </div>
-            {% endfor %}
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 {% endblock body %}
